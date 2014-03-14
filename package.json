@@ -1,0 +1,14 @@
+{
+  "author": {
+    "name": "Samelot"
+  },
+  "name": "snackerjack_restify",
+  "description": "web server",
+  "version": "0.0.0",
+  "main": "./lib/snackerjack-restify",
+  "dependencies": {
+    "restify": ">= 2.6.2",
+    "mysql": ">= 2.1.0"
+  },
+  "devDependencies": {}
+}
