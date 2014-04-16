@@ -3,7 +3,7 @@
 1. Create database named snackerjack
     $ mysql -u root -e 'CREATE DATABASE snackerjack;'
 1. Create column named urls. Create column to hold our posted ids
-    $ mysql -u root snackerjack -e 'CREATE TABLE urls (id VARCHAR(50) NOT NULL);'
+    $ mysql -u root snackerjack -e 'CREATE TABLE urls (id VARCHAR(250) NOT NULL);'
 1. Create column named is_downloaded.
     $ mysql -u root snackerjack -e 'ALTER TABLE urls ADD COLUMN is_downloaded BIT(1) NOT NULL DEFAULT 0;
 1. Create an index to guarantee uniqueness of the `id` column
