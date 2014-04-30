@@ -25,3 +25,13 @@
 This will create a new `id` entry in our mySQL Snackerjack database. If you post again with the same id, you should get `soundcloud set already stored in database`. If you post with a new id, you should get `new soundcloud set stored in database`.
 
 I put my questions and comments in google document, [Here](https://docs.google.com/document/d/1FNd47uc3m51GhhGFNgVBMnQJNVB9psmx_CYko5iOfWs/edit?usp=sharing )
+
+# Create necessary tables in Snackjack database
+
+1. create table sets (id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, primary key (id));
+
+1. create unique index url_idx on sets (url);
+
+1. create table tracks (id mediumint not null auto_increment, name varchar(250) not null, primary key (id))
+
+1. create table set_tracks (set_id mediumint not null, track_id mediumint not null, start_time mediumint not null, foreign key (set_id) references tracks(id), foreign key (set_id) references sets (id));
