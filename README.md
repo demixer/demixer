@@ -35,3 +35,18 @@ I put my questions and comments in google document, [Here](https://docs.google.c
 1. create table tracks (id mediumint not null auto_increment, name varchar(250) not null, primary key (id))
 
 1. create table set_tracks (set_id mediumint not null, track_id mediumint not null, start_time mediumint not null, foreign key (set_id) references tracks(id), foreign key (set_id) references sets (id));
+
+WTF is with this!
+
+- works
+create table sets (id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, is_shit mediumint not null default 0, primary key (id));
+
+- doesn't work
+create table sets (id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, is_shit mediumint not null, primary key (id));
+
+- works
+create table sets (id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, is_shit mediumint, primary key (id));
+
+
+
+
