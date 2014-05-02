@@ -38,13 +38,13 @@ I put my questions and comments in google document, [Here](https://docs.google.c
 
 WTF is with this!
 
-- works
+- works:
 create table sets (id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, is_shit mediumint not null default 0, primary key (id));
 
-- doesn't work
+- doesn't work:
 create table sets (id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, is_shit mediumint not null, primary key (id));
 
-- works
+- works:
 create table sets (id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, is_shit mediumint, primary key (id));
 
 
