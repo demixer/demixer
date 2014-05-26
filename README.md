@@ -32,7 +32,7 @@ I put my questions and comments in google document, [Here](https://docs.google.c
 
 1. create unique index url_idx on sets (url);
 
-1. create table tracks (id mediumint not null auto_increment, name varchar(250) not null, primary key (id))
+1. create table tracks (id mediumint not null auto_increment, name varchar(250) not null, primary key (id));
 
 1. create table set_tracks (set_id mediumint not null, track_id mediumint not null, start_time mediumint not null, foreign key (set_id) references tracks(id), foreign key (set_id) references sets (id));
 
