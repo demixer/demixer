@@ -28,7 +28,7 @@ I put my questions and comments in google document, [Here](https://docs.google.c
 
 # Create necessary tables in Snackjack database
 
-1. create table sets (id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, duration mediumint unsigned, primary key (id));
+1.create table sets(id mediumint not null auto_increment, url varchar(250) not null, is_downloaded bit(1) not null default 0, is_split bit(1) not null default 0, duration mediumint unsigned, primary key(id));
 
 1. create unique index url_idx on sets (url);
 
