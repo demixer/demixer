@@ -36,6 +36,52 @@ I put my questions and comments in google document, [Here](https://docs.google.c
 
 1. create table set_tracks (set_id mediumint not null, track_id mediumint not null, start_time mediumint not null, foreign key (set_id) references sets(id), foreign key(track_id) references tracks(id));
 
+# A model for ingesting tracks with echoprint-server
 
+Correct/most sensible process for ingesting tracks to echoprint-server:
 
+1. 
 
+cd to echoprint-codegen
+
+$ find ./ingest-techno -name "128295_Io_Original_Mix.mp3" > music_to_ingest
+
+1.
+
+$ ./echoprint-codegen -s < music_to_ingest > kk.json
+
+cd to ~/dev/echoprint-server/util	
+
+1.
+
+$ python fastingest.py ~/dev/echoprint/echoprint-codegen/kk.json
+
+Should see an output like this:
+
+1/1 /Users/samenglander/dev/echoprint/echoprint-codegen/kk.json
+
+-- ORRRR --
+
+if this doesn't work - it didn't - try:
+
+taking the code and curl posting it (load up in a .sh files as seen in the examples folder: /ingest-strategies/)
+
+Two examples one for ingesting the track (ingest.sh), and the other for testing if the ingest went through (query.sh)
+
+When POSTING(?) with curl (or $ sh ingest.sh) with curl, if it succeeds, the response should be something like:
+
+{"status": "ok", "track_id": "mattjohnbobbit"}
+
+Interesting READ
+
+https://groups.google.com/forum/#!searchin/echoprint/no$20results$20found$20(type$207)|sort:relevance/echoprint/3ElKlD1_dMk/Ssvzf-5sfXMJ
+
+https://groups.google.com/forum/#!searchin/echoprint/no$20results$20found$20(type$207)|sort:relevance/echoprint/O_py8fD-MXU/vQyWYeWoMfgJ
+
+https://groups.google.com/forum/#!searchin/echoprint/identify/echoprint/1LfSWg0JBYw/PzPCy3qN6moJ
+
+https://groups.google.com/forum/#!searchin/echoprint/ingest$20khz/echoprint/6nb6oCY8Jy0/0E6c6RXOHAIJ
+
+https://groups.google.com/forum/#!searchin/echoprint/mp3$20codec/echoprint/hgdG0Z1z6MU/vfUo0CfZ5eoJ
+
+and look into "best_match_for_query"
