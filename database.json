@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "database": "demixer",
+        "driver": "mysql",
+        "host": "localhost",
+        "multipleStatements": true,
+        "password": "",
+        "user": "root"
+    }
+}

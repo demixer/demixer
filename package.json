@@ -2,13 +2,15 @@
   "author": {
     "name": "Samelot"
   },
-  "name": "snackerjack_restify",
-  "description": "web server",
+  "name": "demixer",
+  "description": "Split and identify tracks within DJ sets",
   "version": "0.0.0",
-  "main": "./lib/snackerjack-restify",
+  "main": "./lib/demixer",
   "dependencies": {
-    "mysql": ">= 2.1.0",
+    "mysql": ">= 2.5.5",
     "restify": ">= 2.6.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "db-migrate": "~0.9.7"
+  }
 }
