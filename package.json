@@ -7,10 +7,15 @@
   "version": "0.0.0",
   "main": "./lib/demixer",
   "dependencies": {
+    "di": "~2.0.0-pre-14",
+    "log4js": "^0.6.22",
     "mysql": ">= 2.5.5",
     "restify": ">= 2.6.2"
   },
   "devDependencies": {
-    "db-migrate": "~0.9.7"
+    "db-migrate": "~0.9.7",
+    "gulp": "^3.8.11",
+    "gulp-traceur": "^0.17.0",
+    "pipe": "^1.0.0"
   }
 }
