@@ -1,12 +1,12 @@
 import {Inject} from 'di';
 import {Driver} from './driver/driver';
-import {Set} from './resource/set';
+import {SetResource} from './resource/set_resource';
 
-@Inject(Driver, Set)
+@Inject(Driver, SetResource)
 export class Server {
-    constructor (driver, set) {
+    constructor (driver, set_resource) {
         this.driver = driver;
-        this.driver.post('/set', set);
+        this.driver.post('/set', set_resource);
     }
 
     start () {

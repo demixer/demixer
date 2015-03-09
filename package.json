@@ -7,6 +7,7 @@
   "version": "0.0.0",
   "main": "./lib/demixer",
   "dependencies": {
+    "bluebird": "^2.9.13",
     "di": "~2.0.0-pre-14",
     "log4js": "^0.6.22",
     "mysql": ">= 2.5.5",

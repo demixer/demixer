@@ -13,6 +13,10 @@ export class MysqlDatabase {
         });
     }
 
+    end (callback) {
+        return this.connection.end(callback);
+    }
+
     query (...args) {
         return this.connection.query(...args);
     }

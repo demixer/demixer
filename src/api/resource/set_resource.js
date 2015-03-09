@@ -2,7 +2,7 @@ import {Database} from '../../database/database';
 import {Inject} from 'di';
 
 @Inject(Database)
-export class Set {
+export class SetResource {
     constructor (database) {
         this.database = database;
     }
@@ -12,12 +12,19 @@ export class Set {
             select,
             url;
 
+        console.log('/set', 'got request')
+
         alreadyExists = false;
         url = req.params.url;
+
+        console.log('/set', 'adding url', url)
+
         select = this.database.query('SELECT * from `set` WHERE url=(?) LIMIT 1', url);
+
         select.on('result', function (result) {
             alreadyExists = true;
         });
+
         select.on('end', () => {
             var insert;
             if (alreadyExists) {
