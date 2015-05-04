@@ -13,7 +13,7 @@ function main () {
     ]);
 
     server = injector.get(Server);
-    server.start();
+    server.start(6060);
 }
 
 main();

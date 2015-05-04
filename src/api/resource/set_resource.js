@@ -12,26 +12,30 @@ export class SetResource {
             select,
             url;
 
-        console.log('/set', 'got request')
+        console.log('in post');
 
         alreadyExists = false;
         url = req.params.url;
+        console.log(req.params);
 
-        console.log('/set', 'adding url', url)
-
+        console.log('in post; selecting');
         select = this.database.query('SELECT * from `set` WHERE url=(?) LIMIT 1', url);
 
         select.on('result', function (result) {
+            console.log('in post; already exists');
             alreadyExists = true;
         });
 
         select.on('end', () => {
             var insert;
+            console.log('in post; end select');
             if (alreadyExists) {
                 res.send(409);
             } else {
-                insert = this.database.query('INSERT INTO `set` (url) VALUES (?)', url, function (err, result) {
+                console.log('in post; inserting');
+                insert = this.database.query('INSERT INTO `set` SET ?', {url: url}, function (err, result) {
                     if (err) {
+                        console.log(err);
                         res.send(500);
                     } else {
                         res.send(200);

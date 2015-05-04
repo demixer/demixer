@@ -9,7 +9,7 @@ export class Server {
         this.driver.post('/set', set_resource);
     }
 
-    start () {
-        this.driver.listen(8080);
+    start (port) {
+        this.driver.listen(port || 8080);
     }
 }
